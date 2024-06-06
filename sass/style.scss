@@ -1,0 +1,58 @@
+@import "./partials/functions";
+$size: 100px;
+
+.box {
+  $padding: 10px;
+  width: dynamicSize($size, $padding);
+  height: dynamicSize($size, $padding);
+  padding: $padding;
+  overflow: hidden;
+}
+
+.box:nth-of-type(2) {
+  $padding: 20px;
+  max-width: dynamicSize($size, $padding);
+  max-height: dynamicSize($size, $padding);
+  padding: $padding;
+  overflow: hidden;
+}
+
+.long-shadow {
+  h2 {
+    text-align: center;
+    font: {
+      size: 66px;
+      weight: 900;
+      family: "Segoe UI", sans-serif;
+    }
+    color: palegreen;
+    letter-spacing: -2px;
+
+    text-shadow: createLongShadow(black, 100);
+  }
+}
+
+$border-colors: red, green, blue, yellow, purple, coral, crimson, palevioletred;
+.multiple-borders {
+  margin-block: 10rem;
+  & > div {
+    width: 200px;
+    height: 200px;
+    margin-inline: auto;
+    background-color: black;
+
+    box-shadow: createMultipleBorders($border-colors);
+  }
+}
+
+.multiple-borders-steps {
+  margin-block: 10rem;
+  & > div {
+    width: 200px;
+    height: 200px;
+    margin-inline: auto;
+    background-color: black;
+
+    box-shadow: createMultipleBordersSteps(palegreen, 40);
+  }
+}
